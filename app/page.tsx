@@ -13,6 +13,7 @@ import { FocusCards } from "@/components/ui/focus-cards";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { Timeline } from "@/components/ui/timeline";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { MatrixText } from "@/components/ui/matrix-text";
 import { 
   FaCode, 
   FaPalette, 
@@ -192,7 +193,7 @@ export default function Home() {
       content: (
         <div>
           <p className="text-slate-300 text-xs md:text-sm font-normal">
-            Started freelancing and charging for my services and added UI UX design to my skillset.
+            Established Recode X Studio, expanding into UI/UX design while partnering with businesses to transform their digital experiences
           </p>
         </div>
       ),
@@ -252,9 +253,10 @@ export default function Home() {
         </div>
         
         <div className="relative z-10 p-4 max-w-7xl mx-auto w-full text-center flex flex-col items-center justify-center min-h-screen">
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-8 tracking-tight">
-            RECODE X
-          </h1>
+          <MatrixText 
+            text="RECODE X" 
+            className="text-7xl md:text-8xl lg:text-9xl font-black mb-8 tracking-tight"
+          />
           
           <TextGenerateEffect
             words="Where Ideas Become Digital Reality"
@@ -262,8 +264,7 @@ export default function Home() {
           />
           
           <p className="text-slate-400 md:text-lg lg:text-xl mb-8 max-w-2xl">
-            We craft stunning digital experiences that captivate users and drive results.
-            Design. Develop. Deliver.
+            Crafting stunning digital experiences that captivate users and drive results.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
@@ -424,7 +425,7 @@ export default function Home() {
               Start Your Project
             </h2>
             <p className="text-slate-400 text-lg">
-              Ready to bring your vision to life? Let's create something amazing together.
+              Ready to bring your vision to life? Let&apos;s create something amazing together.
             </p>
           </div>
           
@@ -475,7 +476,7 @@ export default function Home() {
               </Button>
               
               {formResult === "success" && (
-                <p className="text-center text-cyan-400 text-sm">Message sent successfully! We'll get back to you soon.</p>
+                <p className="text-center text-cyan-400 text-sm">Message sent successfully! We&apos;ll get back to you soon.</p>
               )}
               {formResult === "error" && (
                 <p className="text-center text-red-400 text-sm">Something went wrong. Please try again.</p>

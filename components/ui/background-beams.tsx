@@ -26,27 +26,30 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {paths.map((path, index) => (
-          <motion.path
-            key={`path-${index}`}
-            d={path}
-            stroke={`url(#linearGradient-${index})`}
-            strokeOpacity="0.4"
-            strokeWidth="1"
-            initial={{
-              pathLength: 0,
-            }}
-            animate={{
-              pathLength: 1,
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "linear",
-            }}
-          />
-        ))}
+        {paths.map((path, index) => {
+          const duration = 10 + (index * 5);
+          return (
+            <motion.path
+              key={`path-${index}`}
+              d={path}
+              stroke={`url(#linearGradient-${index})`}
+              strokeOpacity="0.4"
+              strokeWidth="1"
+              initial={{
+                pathLength: 0,
+              }}
+              animate={{
+                pathLength: 1,
+              }}
+              transition={{
+                duration: duration,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "linear",
+              }}
+            />
+          );
+        })}
         <defs>
           {[0, 1, 2].map((index) => (
             <linearGradient

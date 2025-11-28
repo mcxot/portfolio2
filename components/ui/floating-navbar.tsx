@@ -82,12 +82,7 @@ export const FloatingNav = ({
     }
   });
 
-  // Show navbar when mouse is near top
-  useEffect(() => {
-    if (mouseNearTop) {
-      setVisible(true);
-    }
-  }, [mouseNearTop]);
+  // Show navbar when mouse is near top - handled in useMotionValueEvent
 
   // Close mobile menu when clicking a link
   const handleLinkClick = () => {
@@ -116,7 +111,7 @@ export const FloatingNav = ({
         >
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((navItem: any, idx: number) => (
+            {navItems.map((navItem, idx: number) => (
               <a
                 key={`link=${idx}`}
                 href={navItem.link}
@@ -208,7 +203,7 @@ export const FloatingNav = ({
                 {/* Navigation Links */}
                 <nav className="flex-1 px-6">
                   <ul className="space-y-2">
-                    {navItems.map((navItem: any, idx: number) => (
+                    {navItems.map((navItem, idx: number) => (
                       <li key={`mobile-link-${idx}`}>
                         <a
                           href={navItem.link}

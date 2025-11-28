@@ -18,7 +18,14 @@ export const StarsBackground = ({
   className?: string;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const starsRef = useRef<any[]>([]);
+  const starsRef = useRef<Array<{
+    x: number;
+    y: number;
+    radius: number;
+    opacity: number;
+    twinkleSpeed: number;
+    twinkle: boolean;
+  }>>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;

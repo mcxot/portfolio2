@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export const InfiniteMovingCards = ({
   items,
@@ -21,14 +21,13 @@ export const InfiniteMovingCards = ({
   pauseOnHover?: boolean;
   className?: string;
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLUListElement>(null);
+  const animationAddedRef = useRef(false);
 
   useEffect(() => {
-    addAnimation();
-  }, []);
-  const [start, setStart] = useState(false);
-  function addAnimation() {
+    if (animationAddedRef.current) return;
+    
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
 
@@ -39,28 +38,14 @@ export const InfiniteMovingCards = ({
         }
       });
 
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
+      // Set direction
       if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
+        containerRef.current.style.setProperty("--animation-direction", "forwards");
       } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
+        containerRef.current.style.setProperty("--animation-direction", "reverse");
       }
-    }
-  };
-  const getSpeed = () => {
-    if (containerRef.current) {
+
+      // Set speed
       if (speed === "fast") {
         containerRef.current.style.setProperty("--animation-duration", "20s");
       } else if (speed === "normal") {
@@ -68,8 +53,14 @@ export const InfiniteMovingCards = ({
       } else {
         containerRef.current.style.setProperty("--animation-duration", "80s");
       }
+
+      animationAddedRef.current = true;
+      
+      // Add animation class directly to DOM
+      scrollerRef.current.classList.add("animate-scroll");
     }
-  };
+  }, [direction, speed]);
+
   return (
     <div
       ref={containerRef}
@@ -82,11 +73,10 @@ export const InfiniteMovingCards = ({
         ref={scrollerRef}
         className={cn(
           "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="w-[350px] max-w-full relative rounded-2xl border border-slate-700 px-8 py-6 md:w-[450px] bg-slate-900/50 backdrop-blur-sm"
             key={item.name}
@@ -132,4 +122,3 @@ export const InfiniteMovingCards = ({
     </div>
   );
 };
-
