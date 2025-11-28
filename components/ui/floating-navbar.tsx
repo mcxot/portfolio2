@@ -19,11 +19,12 @@ export const FloatingNav = ({
   const [visible, setVisible] = useState(true);
   const [mouseNearTop, setMouseNearTop] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
 
-  // Track mouse position to show navbar when near top
+  // Track mouse position to show navbar when near top (desktop)
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const threshold = 100; // Show navbar when mouse is within 100px of top
+      const threshold = 100;
       if (e.clientY <= threshold) {
         setMouseNearTop(true);
       } else {
@@ -35,10 +36,37 @@ export const FloatingNav = ({
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Touch swipe detection for mobile
+  useEffect(() => {
+    const handleTouchStart = (e: TouchEvent) => {
+      setTouchStart(e.touches[0].clientY);
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      const touchEnd = e.changedTouches[0].clientY;
+      const swipeDistance = touchStart - touchEnd;
+      const threshold = 50;
+
+      if (swipeDistance > threshold) {
+        // Swipe up - hide navbar
+        setVisible(false);
+      } else if (swipeDistance < -threshold) {
+        // Swipe down - show navbar
+        setVisible(true);
+      }
+    };
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [touchStart]);
+
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const direction = current - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
         setVisible(true);
@@ -46,7 +74,6 @@ export const FloatingNav = ({
         if (direction < 0) {
           setVisible(true);
         } else {
-          // Only hide if mouse is not near top
           if (!mouseNearTop) {
             setVisible(false);
           }
