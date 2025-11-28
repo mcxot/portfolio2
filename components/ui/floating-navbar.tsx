@@ -83,7 +83,7 @@ export const FloatingNav = ({
             duration: 0.2,
           }}
           className={cn(
-            "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-slate-700/50 rounded-full bg-slate-950/80 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4",
+            "flex max-w-fit fixed top-4 md:top-10 inset-x-0 mx-auto border border-slate-700/50 rounded-full bg-slate-950/90 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-4 md:pl-8 py-2 items-center justify-center space-x-4",
             className
           )}
         >
@@ -107,14 +107,15 @@ export const FloatingNav = ({
           </div>
 
           {/* Mobile Hamburger Menu */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center">
+            <span className="text-slate-300 text-sm font-medium mr-2">Menu</span>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-slate-300 hover:text-cyan-400 transition-colors p-2"
+              className="text-slate-300 hover:text-cyan-400 transition-colors p-1"
               aria-label="Toggle menu"
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
