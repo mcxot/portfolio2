@@ -253,17 +253,17 @@ export default function Home() {
         
         <div className="relative z-10 p-4 max-w-7xl mx-auto w-full text-center flex flex-col items-center justify-center min-h-screen">
           <div className="uppercase tracking-widest text-xs text-cyan-400 mb-4">
-            Welcome to my portfolio
+            Welcome to Record X Studio
           </div>
           
           <TextGenerateEffect
-            words="Crafting Beautiful Digital Experiences"
+            words="Where Ideas Become Digital Reality"
             className="text-center text-[40px] md:text-5xl lg:text-6xl font-bold mb-6"
           />
           
           <p className="text-slate-400 md:text-lg lg:text-xl mb-8 max-w-2xl">
-            Hi, I'm a Designer & Developer specializing in creating stunning,
-            user-centered interfaces with cutting-edge technologies.
+            We craft stunning digital experiences that captivate users and drive results.
+            Design. Develop. Deliver.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
@@ -294,7 +294,7 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-200 mb-4">
-              About Me
+              About The Studio
             </h2>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">
               Passionate about creating digital experiences that make a difference
@@ -307,21 +307,20 @@ export default function Home() {
                 translateZ="50"
                 className="text-xl font-bold text-slate-200"
               >
-                Creative Designer & Developer
+                Record X Studio
               </CardItem>
               <CardItem
                 as="p"
                 translateZ="60"
                 className="text-slate-400 text-sm max-w-sm mt-2"
               >
-                With over 5 years of experience in digital design and development,
-                I specialize in transforming ideas into beautiful, functional
-                interfaces.
+                A creative digital studio specializing in transforming ideas into 
+                beautiful, functional interfaces that users love.
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
                 <Image
                   src="/owner.jpg"
-                  alt="Portfolio Owner"
+                  alt="Record X Studio"
                   width={480}
                   height={320}
                   className="h-60 w-full rounded-xl object-cover"
@@ -347,10 +346,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-200 mb-4">
-              Skills & Expertise
+              Our Expertise
             </h2>
             <p className="text-slate-400 text-lg">
-              Technologies and tools I work with
+              Technologies and tools we master
             </p>
           </div>
           
@@ -378,10 +377,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-slate-200 mb-4">
-                Featured projects from my main service areas
+                Featured Projects
               </h2>
               <p className="text-slate-400 text-lg">
-                Works that showcase my most commonly delivered services.
+                A showcase of our finest work and delivered solutions.
               </p>
             </div>
             
@@ -403,7 +402,7 @@ export default function Home() {
               Client Testimonials
             </h2>
             <p className="text-slate-400 text-lg">
-              What people say about working with me
+              What clients say about working with Record X Studio
             </p>
           </div>
           
@@ -422,17 +421,17 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-200 mb-4">
-              Let's Work Together
+              Start Your Project
             </h2>
             <p className="text-slate-400 text-lg">
-              Have a project in mind? Let's create something amazing
+              Ready to bring your vision to life? Let's create something amazing together.
             </p>
           </div>
           
           <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio" />
-              <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+              <input type="hidden" name="subject" value="New Project Inquiry - Record X Studio" />
+              <input type="hidden" name="from_name" value="Record X Studio Contact" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -476,7 +475,7 @@ export default function Home() {
               </Button>
               
               {formResult === "success" && (
-                <p className="text-center text-cyan-400 text-sm">Message sent successfully! I'll get back to you soon.</p>
+                <p className="text-center text-cyan-400 text-sm">Message sent successfully! We'll get back to you soon.</p>
               )}
               {formResult === "error" && (
                 <p className="text-center text-red-400 text-sm">Something went wrong. Please try again.</p>
@@ -498,7 +497,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-8 bg-slate-950 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center text-slate-500 text-sm">
-          <p>© 2025 Designer Portfolio. Crafted with passion and Aceternity UI.</p>
+          <p>© 2025 Record X Studio. Crafted with passion.</p>
         </div>
       </footer>
     </main>
