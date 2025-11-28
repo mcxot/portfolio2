@@ -252,9 +252,9 @@ export default function Home() {
         </div>
         
         <div className="relative z-10 p-4 max-w-7xl mx-auto w-full text-center flex flex-col items-center justify-center min-h-screen">
-          <div className="uppercase tracking-widest text-xs text-cyan-400 mb-4">
-            Welcome to Recode X
-          </div>
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-8 tracking-tight">
+            RECODE X
+          </h1>
           
           <TextGenerateEffect
             words="Where Ideas Become Digital Reality"
