@@ -253,7 +253,7 @@ export default function Home() {
         
         <div className="relative z-10 p-4 max-w-7xl mx-auto w-full text-center flex flex-col items-center justify-center min-h-screen">
           <div className="uppercase tracking-widest text-xs text-cyan-400 mb-4">
-            Welcome to Record X Studio
+            Welcome to Recode X
           </div>
           
           <TextGenerateEffect
@@ -307,7 +307,7 @@ export default function Home() {
                 translateZ="50"
                 className="text-xl font-bold text-slate-200"
               >
-                Record X Studio
+                Recode X
               </CardItem>
               <CardItem
                 as="p"
@@ -320,7 +320,7 @@ export default function Home() {
               <CardItem translateZ="100" className="w-full mt-4">
                 <Image
                   src="/owner.jpg"
-                  alt="Record X Studio"
+                  alt="Recode X"
                   width={480}
                   height={320}
                   className="h-60 w-full rounded-xl object-cover"
@@ -402,7 +402,7 @@ export default function Home() {
               Client Testimonials
             </h2>
             <p className="text-slate-400 text-lg">
-              What clients say about working with Record X Studio
+              What clients say about working with Recode X
             </p>
           </div>
           
@@ -430,8 +430,8 @@ export default function Home() {
           
           <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <input type="hidden" name="subject" value="New Project Inquiry - Record X Studio" />
-              <input type="hidden" name="from_name" value="Record X Studio Contact" />
+              <input type="hidden" name="subject" value="New Project Inquiry - Recode X" />
+              <input type="hidden" name="from_name" value="Recode X Contact" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -497,7 +497,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-8 bg-slate-950 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center text-slate-500 text-sm">
-          <p>© 2025 Record X Studio. Crafted with passion.</p>
+          <p>© 2025 Recode X. Crafted with passion.</p>
         </div>
       </footer>
     </main>

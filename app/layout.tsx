@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Record X Studio | Digital Design & Development",
-  description: "Record X Studio - Where ideas become digital reality. We craft stunning digital experiences that captivate users and drive results.",
+  title: "Recode X | Digital Design & Development",
+  description: "Recode X - Where ideas become digital reality. We craft stunning digital experiences that captivate users and drive results.",
 };
 
 export default function RootLayout({
