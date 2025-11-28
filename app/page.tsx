@@ -179,7 +179,7 @@ export default function Home() {
         <div>
           <p className="text-slate-300 text-xs md:text-sm font-normal">
               Enrolled in <strong>Bsc Software Engineering program at Ghana Communication Technology University</strong>.
-              Became good enough with javascript , html , css , php , sql dived right away into more practical projects.
+              Became good enough with javascript , html , css , php , sql and dived right away into more practical projects.
               I started learning both frontend and backend frameworks like next js , laravel , django around this time. 
               I also started sharing my projects on github and collaborating with other developers on other 
               projects.
@@ -224,7 +224,7 @@ export default function Home() {
     {
       quote:
         "The animations and interactions are buttery smooth. Our users constantly compliment the new interface.",
-      name: "Unknown User",
+      name: "Unknown Account",
       title: "",
       rating: 5,
     },
